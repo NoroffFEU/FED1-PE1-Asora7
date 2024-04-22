@@ -1,0 +1,17 @@
+@font-face {
+    font-family: "Inter Regular";
+    src: url("../Fonts/Inter-Regular.ttf") format("truetype");
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid #532F27;
+}
+
+.logo {
+    max-width: 80px;
+    margin-top: 5rem;
+}
+
