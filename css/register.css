@@ -73,30 +73,50 @@ h1 {
     margin-bottom: 2rem;
 }
 
-.first-name, .password, .last-name {
+.input input {
     background-color: #ECEAEA;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    padding-right: 5rem;
 }
 
-.first-name::placeholder, .password::placeholder, .last-name::placeholder {
+.input input::placeholder {
     color: #666;
 }
 
-.first-name {
+.input.error input {
+    border-color: #FF0000;
+}
+
+.error-message {
+    color: #FF0000;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.name, .password, .email {
+    background-color: #ECEAEA;
+}
+
+.name::placeholder, .password::placeholder, .email::placeholder {
+    color: #666;
+}
+
+.name {
     margin-top: 4rem;
 }
 
-.first-name, .last-name {
+.name {
     margin-bottom: 1rem;
 }
 
 button {
     background-color: #306BB0;
     color: white;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding: 0.5rem 1rem;
     font-family: 'Inter Semi';
+    cursor: pointer;
 }
 
 footer {

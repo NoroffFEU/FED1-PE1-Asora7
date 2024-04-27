@@ -11,6 +11,8 @@
         <link rel="icon" sizes="180x180" href="/favicon/android-chrome-512x512.png">
         <link rel="manifest" href="/site.webmanifest">
         <script src="https://kit.fontawesome.com/5e7a9d58a5.js" crossorigin="anonymous"></script>
+        <script src="../javascript/user/register-form.js" defer></script>
+        <script src="../javascript/server/register-api.js" defer></script>
     </head>
 <body>
     <header>
@@ -20,7 +22,7 @@
                 <li class="feed">Feed</li>
                 <li class="edit">Edit</li>
                 <li class="create-account">Create account</li>
-                <li class="log-in">Log in</li>
+                <li class="log-in"><a href="login.html">Log in</a></li>
             </ul>
         </nav>
     </header>
@@ -28,11 +30,12 @@
         <section class="register">
             <h1>Register</h1>
             <div class="input">
-                <input type="text" name="first-name" id="first-name" placeholder="First name" class="first-name">
-                <input type="text" name="last-name" id="last-name" placeholder="Last name" class="last-name">
+                <input type="text" name="name" id="name" placeholder="Name" class="name">
+                <input type="email" name="email" id="email" placeholder="E-mail" class="email">
                 <input type="password" name="password" id="password" placeholder="Password" class="password">
             </div>
-            <button>Create account</button>
+            <button class="register-button">Create account</button>
+            <div class="error-message"></div>
         </section>
     </main>
     <footer>
