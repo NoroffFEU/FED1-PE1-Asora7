@@ -1,3 +1,4 @@
+
 function fetchRegistration(registrationData) {
     return fetch('https://v2.api.noroff.dev/auth/register', {
         method: 'POST',
@@ -8,10 +9,16 @@ function fetchRegistration(registrationData) {
     })
     .then(response => {
         if (response.ok) {
-            window.location.href = '../../account/login.html';
+            const successMessage = document.querySelector('.success-message');
+            successMessage.textContent = 'Account created successfully!';
+            return response.json();
         } else {
             throw new Error('Registration failed');
         }
+    })
+    .then(data => {
+        console.log('Registration successful:', data);
+        window.location.href = '../../account/login.html';
     })
     .catch(error => {
         const errorMessage = document.querySelector('.error-message');

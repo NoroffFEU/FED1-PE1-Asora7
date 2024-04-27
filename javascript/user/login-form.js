@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        // Simulate login (replace with actual login logic)
-        // Here, you would send a request to your backend to validate the credentials
-    })
-})
+        handleLogin(email, password);
+    });
+});

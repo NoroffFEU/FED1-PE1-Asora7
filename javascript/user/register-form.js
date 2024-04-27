@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function(){
         }
 
         const registrationData = {
-            username: name,
+            name: name,
             email: email,
             password: password
         };
