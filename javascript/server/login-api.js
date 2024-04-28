@@ -30,7 +30,7 @@ function handleLogin(event) {
         successMessage.textContent = 'Login successful!';
         successMessage.style.display = 'block';
 
-        window.location.href = '../../index.html';
+
     })
     .catch(error => {
          // Handle login error (e.g., display error message to user)

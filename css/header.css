@@ -16,6 +16,7 @@ header {
 
 .logo {
     max-width: 80px;
+    margin-top: 0;
 }
 
 nav {
@@ -36,13 +37,6 @@ nav li {
 }
 
 
-
-footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-top: 1px solid #532F27;
-}
 
 
 
