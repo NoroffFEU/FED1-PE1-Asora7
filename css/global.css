@@ -1,0 +1,30 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+h1 {
+    margin-top: 2rem;
+    font-family: 'Inter Medium';
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid #532F27;
+    margin-top: auto;
+}
+
+footer .logo {
+    margin-top: 1rem;
+}
+
+.copyright {
+    margin-top: 4rem;
+}

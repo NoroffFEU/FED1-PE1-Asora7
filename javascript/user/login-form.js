@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const passwordInput = document.getElementById('password');
     const errorMessage = document.querySelector('.error-message');
     const loginButton = document.querySelector('.login-button');
+    const logoutButton = document.querySelector('.log-out');
 
     loginButton.addEventListener('click', function(event) {
         event.preventDefault();
@@ -36,5 +37,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         handleLogin(event);
+    });
+
+    logoutButton.addEventListener('click', function(event) {
+        event.preventDefault();
+
+        localStorage.removeItem('token');
+        window.location.href = '../../index.html';
     });
 });
