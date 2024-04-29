@@ -25,15 +25,13 @@ function handleLogin(event) {
     })
     .then(data => {
         localStorage.setItem('token', data.token);
+        window.location.href = '../../index.html';
 
         const successMessage = document.querySelector('.success-message');
         successMessage.textContent = 'Login successful!';
         successMessage.style.display = 'block';
-
-
     })
     .catch(error => {
-         // Handle login error (e.g., display error message to user)
          console.error('Error:', error);
          document.querySelector('.error-message').textContent = 'Login failed. Please check your credentials.';
     });

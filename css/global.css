@@ -1,3 +1,15 @@
+.hide {
+    display: none;
+}
+
+.log-out {
+    color: #532F27;;
+}
+
+.log-out:hover {
+    color: #666;
+}
+
 body {
     display: flex;
     flex-direction: column;
