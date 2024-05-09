@@ -25,7 +25,7 @@ function handleLogin(event) {
     })
     .then(data => {
         localStorage.setItem('token', data.token);
-        window.location.href = '../../index.html';
+        window.location.href = '../../post/edit.html';
 
         const successMessage = document.querySelector('.success-message');
         successMessage.textContent = 'Login successful!';

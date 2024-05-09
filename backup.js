@@ -8,8 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
         return; 
     }
 
+    const blogPostsElement = document.querySelector('.posts-list');
     const postForm = document.getElementById('postForm');
-
+    const deletePostButton = document.getElementById('deletePostButton');
 
     fetchBlogPosts();
 
@@ -22,14 +23,14 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .then(response => response.json())
         .then(posts => {
-            const postsList = document.querySelector('.posts-list');
-            postsList.innerHTML = '';
+
+            blogPostsElement.innerHTML = '';
 
             posts.forEach(post => {
-                const ul = document.createElement('ul');
-                ul.textContent = post.title;
-                ul.dataset.postId = post.id;
-                uli.addEventListener('click', () => editPost(post.id));
+                const li = document.createElement('li');
+                li.textContent = post.title;
+                li.dataset.postId = post.id;
+                li.addEventListener('click', () => editPost(post.id));
                 blogPostsElement.appendChild(li);
             });
         })

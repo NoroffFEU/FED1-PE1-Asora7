@@ -1,3 +1,57 @@
+@font-face {
+    font-family: "Inter Medium";
+    src: url("../Fonts/Inter-Medium.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Inter Semi";
+    src: url("../Fonts/Inter-SemiBold.ttf") format("truetype");
+}
+
 .edit {
     text-decoration: underline;
+}
+
+#blogPosts {
+    flex: 1;
+    padding: 0;
+}
+
+.posts-list {
+    list-style: none;
+    padding: 0;
+}
+
+#postEdit {
+    flex: 1;
+    padding: 20px;
+}
+
+#postForm label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#postForm input[type="text"],
+#postForm textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#postForm button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+#postForm button:hover {
+    background-color: #45a049;
 }

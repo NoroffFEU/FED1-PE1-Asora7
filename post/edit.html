@@ -11,7 +11,6 @@
         <link rel="icon" sizes="180x180" href="/favicon/android-chrome-512x512.png">
         <script src="https://kit.fontawesome.com/5e7a9d58a5.js" crossorigin="anonymous"></script>
         <script src="../javascript/global.js" defer></script>
-        <script src="../javascript/edit-form.js" defer></script>
     </head>
 <body>
     <header>
@@ -28,10 +27,25 @@
         </nav>
     </header>
     <main>
-        <section id="blogPosts">
+        <button id="newPostButton">+ New post</button>
+        <div id="blogPosts">
             <h1>Blog posts</h1>
-        </section>
-        <button>+ New post</button>
+            <ul class="posts-list"></ul>
+        </div>
+        <div id="postEdit" style="display: none;">
+            <h1>Edit</h1>
+            <form id="postForm">
+                <label for="postTitle">Title:</label>
+                <input type="text" id="postTitle" name="postTitle">
+                <label for="postImage">Image:</label>
+                <input type="file" id="postImage" name="postImage">
+                <img id="imagePreview" style="display: none;" alt="Image Preview">
+                <label for="postContent">Content:</label>
+                <textarea id="postContent" name="postContent" rows="10"></textarea>
+                <button id="postButton">Create post</button>
+            </form>
+        </div>
+        <button id="deletePostButton">Delete post</button>
     </main>
     <footer>
         <div class="footer">
