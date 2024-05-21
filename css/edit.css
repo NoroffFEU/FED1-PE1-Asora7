@@ -13,6 +13,20 @@
     src: url("../Fonts/Inter-Regular.ttf") format("truetype");
 }
 
+#newPostButton {
+    margin-top: 20px; 
+    margin-bottom: 20px;
+    margin-left: 25%;
+    background-color: #398E11;
+    color: white;
+    font-family: 'Inter Regular';
+    font-size: 13px;
+}
+
+#newPostButton:hover {
+    background-color: #2e7d32;
+}
+
 .container {
     display: flex;
 }
@@ -37,6 +51,7 @@
 
 #postEdit {
     width: 70%; 
+    padding: 2rem;
 }
 
 .posts-list {
