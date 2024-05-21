@@ -8,13 +8,35 @@
     src: url("../Fonts/Inter-SemiBold.ttf") format("truetype");
 }
 
+@font-face {
+    font-family: "Inter Regular";
+    src: url("../Fonts/Inter-Regular.ttf") format("truetype");
+}
+
+.container {
+    display: flex;
+}
+
 .edit {
     text-decoration: underline;
 }
 
 #blogPosts {
-    flex: 1;
-    padding: 0;
+    width: 20%; 
+    background-color: #EBE4E2;
+    padding: 1rem;
+}
+
+.posts-list li {
+    background-color: #cac3c2; /* Darker background color */
+    padding: 10px; /* Add padding for spacing */
+    margin-bottom: 5px; /* Add margin at the bottom for spacing between each post */
+    font-family: 'Inter Regular';
+    font-size: 16px;
+}
+
+#postEdit {
+    width: 70%; 
 }
 
 .posts-list {

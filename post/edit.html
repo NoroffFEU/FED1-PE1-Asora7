@@ -33,31 +33,28 @@
     </header>
     <main>
         <div id="message" style="display: none;"></div>
-        
         <button id="newPostButton">+ New post</button>
-        
-        <div id="blogPosts">
-            <h1>Blog posts</h1>
-            <ul class="posts-list"></ul>
+        <div class="container">
+            <div id="blogPosts">
+                <h1>Blog posts</h1>
+                <ul class="posts-list"></ul>
+            </div>
+            <div id="postEdit" style="display: none;">
+                <h1>Edit</h1>
+                <form id="postForm">
+                    <label for="postTitle">Title:</label>
+                    <input type="text" id="postTitle" name="title">
+                    
+                    <label for="postBody">Content:</label>
+                    <textarea id="postBody" name="body" rows="10"></textarea>
+                    
+                    <label for="postImage">Media URL:</label>
+                    <input type="url" id="postImage" name="media">
+                    
+                    <button type="submit" id="postButton">Create post</button>
+                </form>
+            </div>
         </div>
-        
-        <div id="postEdit" style="display: none;">
-            <h1>Edit</h1>
-            <form id="postForm">
-                <label for="postTitle">Title:</label>
-                <input type="text" id="postTitle" name="title">
-                
-                <label for="postBody">Content:</label>
-                <textarea id="postBody" name="body" rows="10"></textarea>
-                
-                <label for="postImage">Media URL:</label>
-                <input type="url" id="postImage" name="media">
-                
-                
-                <button type="submit" id="postButton">Create post</button>
-            </form>
-        </div>
-        
         <button id="deletePostButton">Delete post</button>
     </main>
     <footer>
