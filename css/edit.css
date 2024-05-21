@@ -22,10 +22,6 @@
     padding: 0;
 }
 
-#postEdit {
-    flex: 1;
-    padding: 20px;
-}
 
 #postForm label {
     display: block;
