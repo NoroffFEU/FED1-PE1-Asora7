@@ -27,18 +27,27 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         })
         .then(response => response.json())
-        .then(posts => {
-            console.log('Parsed JSON:', posts);
+        .then(result => {
+            console.log('Fetched Posts Response:', result);
+
+            const posts = result.data;
+
+            console.log('Parsed Posts:', posts);
+
             const postsList = document.querySelector('.posts-list');
             postsList.innerHTML = '';
 
-            posts.forEach(post => {
-                const li = document.createElement('li');
-                li.textContent = post.title;
-                li.dataset.postId = post.id;
-                li.addEventListener('click', () => editPost(post.id));
-                postsList.appendChild(li);
-            });
+            if (Array.isArray(posts)) {
+                posts.forEach(post => {
+                    const li = document.createElement('li');
+                    li.textContent = post.title;
+                    li.dataset.postId = post.id;
+                    li.addEventListener('click', () => editPost(post.id));
+                    postsList.appendChild(li);
+                });
+            } else {
+                console.error('Error: posts is not an array', posts);
+            }
         })
         .catch(error => console.error('Error fetching blog posts:', error));
     }
@@ -46,9 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function createPost(event) {
         event.preventDefault();
 
-        // Validate form fields
         const title = document.getElementById('postTitle').value;
-        const body = document.getElementById('postBody').value; // Assuming you have a body field
+        const body = document.getElementById('postBody').value; 
         const mediaUrl = document.getElementById('postImage').value;
 
         if (!title) {
@@ -59,8 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
             showMessage("Invalid URL format for media.", "error");
             return;
         }
-
-        // Create the post data object
+        
         const postData = {
             title: title,
             body: body,
