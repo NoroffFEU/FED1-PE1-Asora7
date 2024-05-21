@@ -24,12 +24,19 @@ function handleLogin(event) {
         }
     })
     .then(data => {
-        localStorage.setItem('token', data.token);
-        window.location.href = '../../post/edit.html';
+        console.log('Login response data:', data); // Log the response data
 
-        const successMessage = document.querySelector('.success-message');
-        successMessage.textContent = 'Login successful!';
-        successMessage.style.display = 'block';
+        if (data.data && data.data.accessToken) { // Check for accessToken in response data
+            localStorage.setItem('token', data.data.accessToken);
+            window.location.href = '../../post/edit.html';
+
+            const successMessage = document.querySelector('.success-message');
+            successMessage.textContent = 'Login successful!';
+            successMessage.style.display = 'block';
+        } else {
+            console.error('Token not found in response');
+            document.querySelector('.error-message').textContent = 'Login failed. Token not received.';
+        }
     })
     .catch(error => {
          console.error('Error:', error);

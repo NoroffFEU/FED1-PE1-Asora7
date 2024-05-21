@@ -7,18 +7,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const postForm = document.getElementById('postForm');
     const newPostButton = document.getElementById('newPostButton');
     const postEdit = document.getElementById('postEdit');
+    const messageDiv = document.getElementById('message');
 
     if (!token || token === "") {
         console.error("Token not found or empty. User might not be logged in properly.");
         window.location.href = '../../account/login.html';
-        return; 
+        return;
     }
 
     newPostButton.addEventListener('click', () => {
         postEdit.style.display = 'block';
     });
 
-    function fetchBlogPosts() { 
+    function fetchBlogPosts() {
         fetch(`${apiUrl}/blog/posts/Asora`, {
             method: 'GET',
             headers: {
@@ -35,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 li.textContent = post.title;
                 li.dataset.postId = post.id;
                 li.addEventListener('click', () => editPost(post.id));
-                postsList.appendChild(li); 
+                postsList.appendChild(li);
             });
         })
         .catch(error => console.error('Error fetching blog posts:', error));
@@ -44,25 +45,63 @@ document.addEventListener('DOMContentLoaded', () => {
     function createPost(event) {
         event.preventDefault();
 
-        const formData = new FormData(postForm);
+        // Validate form fields
+        const title = document.getElementById('postTitle').value;
+        const body = document.getElementById('postBody').value; // Assuming you have a body field
+        const mediaUrl = document.getElementById('postImage').value;
+
+        if (!title) {
+            showMessage("Title is required.", "error");
+            return;
+        }
+        if (mediaUrl && !isValidUrl(mediaUrl)) {
+            showMessage("Invalid URL format for media.", "error");
+            return;
+        }
+
+        // Create the post data object
+        const postData = {
+            title: title,
+            body: body,
+            media: mediaUrl ? { url: mediaUrl, alt: mediaAlt } : undefined
+        };
 
         fetch(`${apiUrl}/blog/posts/Asora`, {
             method: 'POST',
             headers: {
-                'Authorization': `Bearer ${token}`
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
             },
-            body: formData
+            body: JSON.stringify(postData)
         })
         .then(response => {
             if (response.ok) {
                 fetchBlogPosts();
                 postForm.reset();
                 postEdit.style.display = 'none';
+                showMessage("Post created successfully.", "success");
             } else {
-                response.text().then(text => console.error('Error creating post:', text)); 
+                response.json().then(error => {
+                    console.error('Error creating post:', error);
+                    showMessage(`Error creating post: ${error.errors[0].message}`, "error");
+                });
             }
         })
-        .catch(error => console.error('Error creating post:', error));
+        .catch(error => {
+            console.error('Error creating post:', error);
+            showMessage("Error creating post. Please try again.", "error");
+        });
+    }
+
+    function isValidUrl(url) {
+        const urlPattern = /^(ftp|http|https):\/\/[^ "]+$/;
+        return urlPattern.test(url);
+    }
+
+    function showMessage(message, type) {
+        messageDiv.textContent = message;
+        messageDiv.className = type;
+        messageDiv.style.display = 'block';
     }
 
     postForm.addEventListener('submit', createPost);
