@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .then(response => response.json())
         .then(posts => {
+            console.log('Parsed JSON:', posts);
             const postsList = document.querySelector('.posts-list');
             postsList.innerHTML = '';
 
