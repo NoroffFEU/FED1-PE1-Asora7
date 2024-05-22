@@ -15,8 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
+    let selectedPostId = null;
+
     newPostButton.addEventListener('click', () => {
         postEdit.style.display = 'block';
+        clearSelection();
     });
 
     function fetchBlogPosts() {
@@ -29,9 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(response => response.json())
         .then(result => {
             console.log('Fetched Posts Response:', result);
-
             const posts = result.data;
-
             console.log('Parsed Posts:', posts);
 
             const postsList = document.querySelector('.posts-list');
@@ -41,6 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 posts.forEach(post => {
                     const li = document.createElement('li');
                     li.textContent = post.title;
+                    li.classList.add('post-item');
                     li.dataset.postId = post.id;
                     li.addEventListener('click', () => editPost(post.id));
                     postsList.appendChild(li);
@@ -67,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
             showMessage("Invalid URL format for media.", "error");
             return;
         }
-        
+
         const postData = {
             title: title,
             body: body,
@@ -101,17 +103,56 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function isValidUrl(url) {
-        const urlPattern = /^(ftp|http|https):\/\/[^ "]+$/;
-        return urlPattern.test(url);
+    function editPost(postId) {
+        fetch(`${apiUrl}/blog/posts/Asora/${postId}`, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        })
+        .then(response => response.json())
+        .then(result => {
+            const post = result.data;
+            document.getElementById('postTitle').value = post.title;
+            document.getElementById('postBody').value = post.body;
+            document.getElementById('postImage').value = post.media ? post.media.url : '';
+            selectedPostId = post.id;
+            postEdit.style.display = 'block';
+
+            const postItems = document.querySelectorAll('.post-item');
+            postItems.forEach(item => {
+                item.classList.remove('selected');
+                if (item.dataset.postId === postId) {
+                    item.classList.add('selected');
+                }
+            });
+        })
+        .catch(error => console.error('Error fetching post:', error));
+    }
+
+    function clearSelection() {
+        selectedPostId = null;
+        const postItems = document.querySelectorAll('.post-item');
+        postItems.forEach(item => item.classList.remove('selected'));
+        postForm.reset();
     }
 
     function showMessage(message, type) {
         messageDiv.textContent = message;
         messageDiv.className = type;
         messageDiv.style.display = 'block';
+        setTimeout(() => {
+            messageDiv.style.display = 'none';
+        }, 3000);
+    }
+
+    function isValidUrl(url) {
+        const urlPattern = /^(ftp|http|https):\/\/[^ "]+$/;
+        return urlPattern.test(url);
     }
 
     postForm.addEventListener('submit', createPost);
     fetchBlogPosts();
 });
+
+

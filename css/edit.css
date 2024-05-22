@@ -59,6 +59,21 @@
     padding: 0;
 }
 
+.post-item { 
+    padding: 10px; 
+    margin-bottom: 10px; 
+    background-color: #D5CAC7; 
+    cursor: pointer; 
+}
+        
+.post-item:hover { 
+    background-color: #B8ACA9; 
+}
+
+.post-item.selected { 
+    background-color: #A89C99; 
+}
+
 
 #postForm label {
     display: block;
