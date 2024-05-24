@@ -126,24 +126,22 @@
     float: right;
 }
 
+#postButton:hover {
+    background-color: #2e7d32;
+}
+
 #deletePostButton {
     background-color:  #D22626;
     color: white;
     display: block;
     margin-top: 1rem;
+    cursor: pointer;
 }
 
-#updateButton {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    float: right;
-    background-color: #4CAF50;
-    color: white;
+#deletePostButton:hover {
+    background-color:#b21010 ;
 }
+
 
 #editPostButton {
     background-color: white;
