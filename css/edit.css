@@ -13,6 +13,11 @@
     src: url("../Fonts/Inter-Regular.ttf") format("truetype");
 }
 
+@font-face {
+    font-family: "Leckerli";
+    src: url("../Fonts/LeckerliOne-Regular.ttf") format("truetype");
+}
+
 #newPostButton {
     margin-top: 20px; 
     margin-bottom: 20px;
@@ -25,6 +30,18 @@
 
 #newPostButton:hover {
     background-color: #2e7d32;
+}
+
+#detailImage {
+    max-width: 40%;
+    float: right;
+    margin-top: -2rem;
+}
+
+.detail-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
 }
 
 .container {
@@ -42,9 +59,9 @@
 }
 
 .posts-list li {
-    background-color: #cac3c2; /* Darker background color */
-    padding: 10px; /* Add padding for spacing */
-    margin-bottom: 5px; /* Add margin at the bottom for spacing between each post */
+    background-color: #cac3c2; 
+    padding: 10px; 
+    margin-bottom: 15px; 
     font-family: 'Inter Regular';
     font-size: 16px;
 }
@@ -57,6 +74,10 @@
 #postDetail {
     width: 70%;
     padding: 2rem;
+}
+
+#detailTitle {
+    font-family: 'Leckerli';
 }
 
 .posts-list {
@@ -124,6 +145,39 @@
     color: white;
 }
 
+#editPostButton {
+    background-color: white;
+    color: black;
+    padding: 8px 18px;
+    border-style: solid;
+    border-radius: 4px;
+    border-color: black;
+    cursor: pointer;
+}
+
+#editPostButton:hover {
+    background-color: #e1dcdc; /* Darker grey color on hover */
+}
+
+.edit-icon-button {
+    float: right;
+}
+
+#editIcon {
+    font-size: 20px;
+    margin-right: 1rem;
+}
+
 #postButton button:hover {
     background-color: #45a049;
+}
+
+#detailAuthor,
+#detailPublished,
+#detailUpdated {
+    font-style: italic; /* Apply italic font style */
+}
+
+#detailBody {
+    margin-bottom: 3rem;
 }
