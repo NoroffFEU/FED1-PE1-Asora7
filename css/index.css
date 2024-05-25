@@ -21,6 +21,7 @@
 .h1 {
     text-align: center;
     font-family: 'Leckerli';
+    color: #532F27;
     font-size: 44px;
 }
 
@@ -130,6 +131,7 @@ button {
     font-family: 'Leckerli';
     font-size: xx-large;
     margin-bottom: 2rem;
+    color: #532F27;
 }
 
 
