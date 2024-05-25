@@ -141,14 +141,23 @@ button {
     overflow: hidden;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 180px; /* fix size here */
+    height: 180px; /* Fix size here*/
+    overflow: hidden;
 }
 
 .post-thumbnail img {
-    width: 100%;
-    height: auto;
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover;
+    cursor: pointer;
 }
 
 .post-thumbnail:hover {
     transform: translateY(-5px);
     transition: transform 0.3s ease;
+}
+
+.post-grid {
+    margin-bottom: 5rem;
 }
