@@ -125,6 +125,12 @@ button {
     right: 60px;
 }
 
+.posts-title {
+    text-align: center;
+    font-family: 'Leckerli';
+    font-size: xx-large;
+    margin-bottom: 2rem;
+}
 
 
 .post-grid {

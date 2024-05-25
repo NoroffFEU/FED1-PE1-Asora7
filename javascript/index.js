@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextButton = document.getElementById('next');
     const postGrid = document.querySelector('.post-grid');
     let posts = [];
+    let carouselPosts = [];
     let currentIndex = 0;
 
     function fetchBlogPosts() {
@@ -17,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(result => {
             posts = result.data;
             posts.sort((a, b) => new Date(b.created) - new Date(a.created));
+            carouselPosts = posts.slice(0, 3); // Get the latest 3 posts for the carousel
             displayPosts(); 
             displayThumbnailPosts(); 
         })
@@ -31,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function displayPosts() {
         carouselContent.innerHTML = '';
 
-        const post = posts[currentIndex];
+        const post = carouselPosts[currentIndex];
 
         const postContainer = document.createElement('div');
         postContainer.classList.add('post-container');
@@ -90,12 +92,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function showNextPost() {
-        currentIndex = (currentIndex + 1) % posts.length;
+        currentIndex = (currentIndex + 1) % carouselPosts.length;
         displayPosts();
     }
 
     function showPrevPost() {
-        currentIndex = (currentIndex - 1 + posts.length) % posts.length;
+        currentIndex = (currentIndex - 1 + carouselPosts.length) % carouselPosts.length;
         displayPosts();
     }
 
@@ -104,4 +106,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     fetchBlogPosts();
 });
+
 
