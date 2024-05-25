@@ -4,8 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Post Public Page</title>
+    <link rel="android-chrome-512x512" sizes="180x180" href="android-chrome-512x512.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link href="../css/header.css" rel="stylesheet">
+    <link href="../css/global.css" rel="stylesheet">
+    <link href="../css/post/index.css" rel="stylesheet">
+    <script src="../javascript/global.js" defer></script>
+    <script src="../javascript/post/index.js" defer></script>
 </head>
 <body>
-    
+    <header>
+        <img src="favicon/android-chrome-512x512.png" alt="Dough Dreams logo"  class="logo">
+        <nav>
+            <ul>
+                <li class="feed"><a href="index.html">Feed</a></li>
+                <li class="recipes"><a href="#">Recipes</a></li>
+                <li class="edit hide"><a href="../post/edit.html">Edit</a></li>
+                <li class="register"><a href="/account/register.html">Register</a></li>
+                <li class="log-in"><a href="/account/login.html">Log in</a></li>
+                <li class="log-out hide">Log out</li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="postContent" class="post-content">
+        </div>
+    </main>
+    <footer>
+        <div class="footer">
+            <img src="/favicon/android-chrome-512x512.png" alt="Dough Dreams logo" class="logo">
+            <p class="copyright">&copy; 2024 Dough Dreams</p>
+        </div>
+    </footer>
 </body>
 </html>

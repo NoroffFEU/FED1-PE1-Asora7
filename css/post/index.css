@@ -1,0 +1,55 @@
+
+@font-face {
+    font-family: "Leckerli";
+    src: url("../Fonts/LeckerliOne-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Inter Medium";
+    src: url("../Fonts/Inter-Medium.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Inter Regular";
+    src: url("../Fonts/Inter-Regular.ttf") format("truetype");
+}
+
+.feed {
+    text-decoration: underline;
+}
+
+.post-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    max-width: 800px; 
+    margin: auto;
+}
+
+.post-container img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 50px;
+    margin-top: 15px;
+    width: 400px;  
+    height: 300px; 
+    object-fit: cover;
+}
+
+.post-container h2 {
+    margin-bottom: 20px;
+    font-family: 'Leckerli';
+    font-size: 32px;
+}
+
+.post-container p {
+    margin-bottom: 10px;
+    font-family: 'Inter Regular';
+    font-size: 16px;
+    text-align: left;
+    max-width: 50%; 
+    margin: 0 auto; 
+}
+
