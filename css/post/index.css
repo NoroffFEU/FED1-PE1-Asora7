@@ -1,17 +1,7 @@
 
 @font-face {
-    font-family: "Leckerli";
-    src: url("../Fonts/LeckerliOne-Regular.ttf") format("truetype");
-}
-
-@font-face {
     font-family: "Inter Medium";
     src: url("../Fonts/Inter-Medium.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "Inter Regular";
-    src: url("../Fonts/Inter-Regular.ttf") format("truetype");
 }
 
 .feed {
@@ -51,5 +41,10 @@
     text-align: left;
     max-width: 50%; 
     margin: 0 auto; 
+}
+
+.post-meta {
+    font-style: italic;
+    padding-top: 2rem;
 }
 

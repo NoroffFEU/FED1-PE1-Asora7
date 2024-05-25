@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const postContainer = document.createElement('div');
         postContainer.classList.add('post-container');
 
-
         const titleElement = document.createElement('h2');
         titleElement.textContent = post.title;
         postContainer.appendChild(titleElement);
@@ -42,7 +41,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const authorElement = document.createElement('p');
         authorElement.textContent = `Author: ${post.author.name}`;
+        authorElement.classList.add('post-meta');
         postContainer.appendChild(authorElement);
+
+        const publishDateElement = document.createElement('p');
+        publishDateElement.textContent = `Published: ${formatDate(post.created)}`;
+        publishDateElement.classList.add('post-meta');
+        postContainer.appendChild(publishDateElement);
+
+        const lastUpdatedElement = document.createElement('p');
+        lastUpdatedElement.textContent = `Last updated: ${formatDate(post.updated)}`;
+        lastUpdatedElement.classList.add('post-meta');
+        postContainer.appendChild(lastUpdatedElement);
 
         postContent.appendChild(postContainer);
     }
@@ -51,6 +61,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const paragraphs = content.split('\n').map(para => `<p>${para}</p>`).join('<br>');
         return `<div class="post-body">${paragraphs}</div>`;
     }
-    
-});
 
+    function formatDate(dateString) {
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        const date = new Date(dateString);
+        return date.toLocaleDateString(undefined, options);
+    }
+});
