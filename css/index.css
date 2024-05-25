@@ -1,3 +1,126 @@
+
+@font-face {
+    font-family: "Leckerli";
+    src: url("../Fonts/LeckerliOne-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Inter Medium";
+    src: url("../Fonts/Inter-Medium.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Inter Regular";
+    src: url("../Fonts/Inter-Regular.ttf") format("truetype");
+}
+
 .feed {
     text-decoration: underline;
+}
+
+.h1 {
+    text-align: center;
+    font-family: 'Leckerli';
+    font-size: 44px;
+}
+
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    border: 1px solid black;
+    margin-bottom: 5rem;
+}
+
+.carousel-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: transform 0.5s ease;
+}
+
+.post-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.post-container img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    margin-top: 15px;
+    width: 400px;  /* Add this line to set a fixed width for the images */
+    height: 300px; /* Add this line to set a fixed height for the images */
+    object-fit: cover;
+}
+
+.post-container h2 {
+    margin-bottom: 20px;
+    font-family: 'Inter Regular';
+    font-size: 32px;
+    
+}
+
+.post-container p {
+    margin-bottom: 10px;
+    font-family: 'Inter Regular';
+    font-size: 16px;
+}
+
+.post-body {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.read-more {
+    color: blue;
+    cursor: pointer;
+    margin-top: 2rem;
+    background: none;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+button {
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.arrow {
+    cursor: pointer;
+    background: none;
+    color: black;
+    font-size: 30px;
+}
+
+.arrow:hover {
+    color: #5a5a5a;
+}
+
+#prev {
+    position: absolute;
+    left: 60px;
+}
+
+#next {
+    position: absolute;
+    right: 60px;
 }
