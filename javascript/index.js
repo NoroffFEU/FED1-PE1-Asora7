@@ -57,9 +57,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const readMoreButton = document.createElement('button');
         readMoreButton.textContent = 'Read more..';
         readMoreButton.classList.add('read-more');
+        
+        // Updated: Add post ID to URL for shareable link
         readMoreButton.addEventListener('click', () => {
             window.location.href = `../post/index.html?id=${post.id}`;
         });
+
         postContainer.appendChild(readMoreButton);
 
         postContainer.style.opacity = 0;
@@ -83,6 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
             thumbnailImage.alt = post.title;
             postThumbnail.appendChild(thumbnailImage);
 
+            // Updated: Add post ID to URL for shareable link
             postThumbnail.addEventListener('click', () => {
                 window.location.href = `../post/index.html?id=${post.id}`;
             });
@@ -106,5 +110,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     fetchBlogPosts();
 });
+
 
 
