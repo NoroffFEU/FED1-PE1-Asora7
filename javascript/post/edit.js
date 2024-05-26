@@ -194,10 +194,20 @@ document.addEventListener('DOMContentLoaded', () => {
             postEdit.style.display = 'block';
             postDetail.style.display = 'none';
             postButton.innerText = "Update Post"; // Set the button text to "Update Post"
+            
+            // Check if there's an existing post being edited
+            if (selectedPostId) {
+                // Add a delete button dynamically
+                const deleteButton = document.createElement('button');
+                deleteButton.innerText = 'Delete Post';
+                deleteButton.classList.add('delete-post-button');
+                deleteButton.addEventListener('click', () => confirmDeletePost()); // Call the delete function when clicked
+                postEdit.appendChild(deleteButton); // Append the delete button to the edit form
+            }
         })
         .catch(error => console.error('Error fetching post data:', error));
     }
-
+    
     function confirmDeletePost() {
         if (confirm("Are you sure you want to delete this post?")) {
             deletePost(selectedPostId);
@@ -214,6 +224,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 fetchBlogPosts();
                 postDetail.style.display = 'none';
                 showMessage("Post deleted successfully.", "success");
+    
+                // Reset the form fields
+                postForm.reset();
+    
+                // Remove the delete button if it exists
+                const deleteButton = document.querySelector('.delete-post-button');
+                if (deleteButton) {
+                    deleteButton.remove();
+                }
+    
+                // Clear the selectedPostId
+                selectedPostId = null;
             } else {
                 response.json().then(error => {
                     console.error('Error deleting post:', error);
@@ -226,6 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
             showMessage("Error deleting post. Please try again.", "error");
         });
     }
+    
 
     fetchBlogPosts();
 });

@@ -130,13 +130,14 @@
     background-color: #2e7d32;
 }
 
-#deletePostButton {
+#deletePostButton, .delete-post-button {
     background-color:  #D22626;
     color: white;
     display: block;
     margin-top: 1rem;
     cursor: pointer;
 }
+
 
 #deletePostButton:hover {
     background-color:#b21010 ;
