@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault();
 
         localStorage.removeItem('token');
-        window.location.href = '../index.html';
+        window.location.href = 'index.html';
     });
 
 let timeoutId;
