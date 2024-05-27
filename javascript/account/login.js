@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
             event.preventDefault();
 
             localStorage.removeItem('token');
-            window.location.href = '/index.html';
+            window.location.href = 'index.html';
         });
     }
 
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (data.data && data.data.accessToken) {
                 localStorage.setItem('token', data.data.accessToken);
-                window.location.href = '/post/edit.html'; 
+                window.location.href = 'post/edit.html'; 
 
                 const successMessage = document.querySelector('.success-message');
                 successMessage.textContent = 'Login successful!';

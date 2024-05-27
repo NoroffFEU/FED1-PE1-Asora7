@@ -168,8 +168,6 @@
     display: block;
     margin-top: 1rem;
     cursor: pointer;
-    font-family: 'Inter Regular';
-    font-size: 13px;
 }
 
 #deletePostButton:hover {

@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
             event.preventDefault();
 
             localStorage.removeItem('token');
-            window.location.href = '/index.html';
+            window.location.href = 'index.html';
         });
     }
 
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function logout() {
         localStorage.removeItem('token');
-        window.location.href = '/account/login.html';
+        window.location.href = 'account/login.html';
     }
 
     document.addEventListener('mousemove', resetLogoutTimer);
