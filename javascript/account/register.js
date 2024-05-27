@@ -35,7 +35,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     registerButton.addEventListener('click', function(event) {
         console.log('Registration successful:');
-        window.location.href = '../account/login.html'; 
+        window.location.href = 'account/login.html'; 
+
     });
 
     function fetchRegistration(registrationData) {
@@ -57,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .then(data => {
             console.log('Registration successful:', data);
-            window.location.href = '../account/login.html';
+            window.location.href = 'account/login.html';
         })
         .catch(error => {
             errorMessage.textContent = 'Registration failed. Please check your credentials and try again.';
