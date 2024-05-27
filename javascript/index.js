@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(result => {
             posts = result.data;
             posts.sort((a, b) => new Date(b.created) - new Date(a.created));
-            carouselPosts = posts.slice(0, 3); // Get the latest 3 posts for the carousel
+            carouselPosts = posts.slice(0, 3); 
             displayPosts(); 
             displayThumbnailPosts(); 
         })

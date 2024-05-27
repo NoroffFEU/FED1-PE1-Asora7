@@ -1,4 +1,3 @@
-/* Common styles for all screen sizes */
 @font-face {
     font-family: "Inter Medium";
     src: url("../Fonts/Inter-Medium.ttf") format("truetype");
@@ -19,6 +18,10 @@
     src: url("../Fonts/LeckerliOne-Regular.ttf") format("truetype");
 }
 
+.edit {
+    text-decoration: underline;
+}
+
 #newPostButton {
     margin-top: 20px; 
     margin-bottom: 20px;
@@ -33,6 +36,29 @@
     background-color: #2e7d32;
 }
 
+.container {
+    display: flex;
+}
+
+.posts-list {
+    list-style: none;
+    padding: 0;
+}
+
+.posts-list li {
+    background-color: #cac3c2; 
+    padding: 10px; 
+    margin-bottom: 15px; 
+    font-family: 'Inter Regular';
+    font-size: 16px;
+}
+
+#blogPosts {
+    width: 20%; 
+    background-color: #EBE4E2;
+    padding: 1rem;
+}
+
 .post-container {
     display: flex;
     flex-direction: column;
@@ -41,7 +67,7 @@
     padding: 20px;
     max-width: 800px; 
     margin: auto;
-    position: relative; /* Add position relative */
+    position: relative; 
 }
 
 .post-container img {
@@ -75,45 +101,21 @@
     padding-top: 2rem;
 }
 
-.container {
-    display: flex;
-}
-
-.edit {
-    text-decoration: underline;
-}
-
-#blogPosts {
-    width: 20%; 
-    background-color: #EBE4E2;
-    padding: 1rem;
-}
-
-.posts-list li {
-    background-color: #cac3c2; 
-    padding: 10px; 
-    margin-bottom: 15px; 
-    font-family: 'Inter Regular';
-    font-size: 16px;
-}
-
-#postEdit {
-    width: 70%; 
-    padding: 2rem;
-}
 
 #postDetail {
     width: 70%;
     padding: 2rem;
 }
 
+
 #detailTitle {
     font-family: 'Leckerli';
 }
 
-.posts-list {
-    list-style: none;
-    padding: 0;
+
+#postEdit {
+    width: 70%; 
+    padding: 2rem;
 }
 
 .post-item { 
@@ -191,13 +193,13 @@
 }
 
 #editPostButton:hover {
-    background-color: #e1dcdc; /* Darker grey color on hover */
+    background-color: #e1dcdc; 
 }
 
 
 #editIcon {
     font-size: 20px;
-    margin-right: 5px; /* Adjust margin to separate icon from button */
+    margin-right: 5px; 
 }
 
 
@@ -208,7 +210,7 @@
 #detailAuthor,
 #detailPublished,
 #detailUpdated {
-    font-style: italic; /* Apply italic font style */
+    font-style: italic; 
 }
 
 #detailBody {
@@ -239,7 +241,7 @@
 
     #editPostButton {
         top: unset;
-        bottom: 20px; /* Adjust bottom position */
-        right: 20px; /* Adjust right position */
+        bottom: 20px; 
+        right: 20px; 
     }
 }

@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 postDetail.style.display = 'none';
                 showMessage(selectedPostId ? "Post updated successfully." : "Post created successfully.", "success");
                 selectedPostId = null;
-                postButton.innerText = "Create Post"; // Reset the button text
+                postButton.innerText = "Create Post"; 
             } else {
                 response.json().then(error => {
                     console.error('Error creating/updating post:', error);
@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
         postForm.reset();
         postEdit.style.display = 'block';
         postDetail.style.display = 'none';
-        postButton.innerText = "Create Post"; // Set the button text to "Create Post"
+        postButton.innerText = "Create Post";
     }
 
     function showEditForm() {
@@ -194,20 +194,18 @@ document.addEventListener('DOMContentLoaded', () => {
             
             postEdit.style.display = 'block';
             postDetail.style.display = 'none';
-            postButton.innerText = "Update Post"; // Set the button text to "Update Post"
+            postButton.innerText = "Update Post";
             
-            // Check if there's an existing delete button and remove it if it exists
             const existingDeleteButton = document.querySelector('.delete-post-button');
             if (existingDeleteButton) {
                 existingDeleteButton.remove();
             }
     
-            // Add a delete button dynamically
             const deleteButton = document.createElement('button');
             deleteButton.innerText = 'Delete Post';
             deleteButton.classList.add('delete-post-button');
-            deleteButton.addEventListener('click', () => confirmDeletePost()); // Call the delete function when clicked
-            postEdit.appendChild(deleteButton); // Append the delete button to the edit form
+            deleteButton.addEventListener('click', () => confirmDeletePost()); 
+            postEdit.appendChild(deleteButton); 
         })
         .catch(error => console.error('Error fetching post data:', error));
     }
@@ -230,16 +228,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 postDetail.style.display = 'none';
                 showMessage("Post deleted successfully.", "success");
     
-                // Reset the form fields
                 postForm.reset();
     
-                // Remove the delete button if it exists
                 const deleteButton = document.querySelector('.delete-post-button');
                 if (deleteButton) {
                     deleteButton.remove();
                 }
     
-                // Clear the selectedPostId
                 selectedPostId = null;
             } else {
                 response.json().then(error => {
