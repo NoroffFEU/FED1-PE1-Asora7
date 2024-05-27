@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault();
 
         localStorage.removeItem('token');
-        window.location.href = '../../account/login.html';
+        window.location.href = 'index.html';
     });
 
     function handleLogin(email, password) {
