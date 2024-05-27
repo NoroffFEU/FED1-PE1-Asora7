@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
         readMoreButton.classList.add('read-more');
         
         readMoreButton.addEventListener('click', () => {
-            window.location.href = `../post/index.html?id=${post.id}`;
+            window.location.href = `../FED1-PE1-Asora7/post/index.html?id=${post.id}`;
         });
 
         postContainer.appendChild(readMoreButton);
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
             postThumbnail.appendChild(thumbnailImage);
 
             postThumbnail.addEventListener('click', () => {
-                window.location.href = `../post/index.html?id=${post.id}`;
+                window.location.href = `../FED1-PE1-Asora7/post/index.html?id=${post.id}`;
             });
 
             postGrid.appendChild(postThumbnail);
