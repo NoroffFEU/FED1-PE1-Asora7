@@ -40,7 +40,7 @@ function resetLogoutTimer() {
 
 function logout() {
     localStorage.removeItem('token'); 
-    window.location.href = '/account/login.html'; 
+    window.location.href = 'account/login.html'; 
 }
 
 document.addEventListener('mousemove', resetLogoutTimer);
