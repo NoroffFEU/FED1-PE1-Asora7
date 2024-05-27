@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .then(data => {
             console.log('Registration successful:', data);
-            window.location.href = '../../account/login.html';
+            window.location.href = '../account/login.html';
         })
         .catch(error => {
             errorMessage.textContent = 'Registration failed. Please check your credentials and try again.';
