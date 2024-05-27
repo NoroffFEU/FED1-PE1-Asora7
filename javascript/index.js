@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
         readMoreButton.classList.add('read-more');
         
         readMoreButton.addEventListener('click', () => {
-            window.location.href = `/javascript/post/index.js?id=${post.id}`;
+            window.location.href = `/post/index.html?id=${post.id}`;
         });
 
         postContainer.appendChild(readMoreButton);
