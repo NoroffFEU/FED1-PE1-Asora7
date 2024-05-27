@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // });
 
     registerButton.addEventListener('click', function(event) {
-        console.log('Registration successful:', data);
+        console.log('Registration successful:');
         window.location.href = '../../account/login.html'; 
     });
 
