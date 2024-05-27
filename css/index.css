@@ -60,8 +60,8 @@
     height: auto;
     margin-bottom: 10px;
     margin-top: 15px;
-    width: 400px;  /* Add this line to set a fixed width for the images */
-    height: 300px; /* Add this line to set a fixed height for the images */
+    width: 400px;  
+    height: 300px; 
     object-fit: cover;
 }
 
@@ -149,8 +149,8 @@ button {
     overflow: hidden;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 180px; /* fix size here */
-    height: 180px; /* Fix size here*/
+    width: 180px; 
+    height: 180px; 
     overflow: hidden;
 }
 
@@ -169,3 +169,46 @@ button {
 .post-grid {
     margin-bottom: 5rem;
 }
+
+@media only screen and (max-width: 600px) {
+    .h1 {
+        font-size: 32px;
+    }
+
+    .carousel {
+        max-width: 90%;
+    }
+
+    .post-thumbnail {
+        width: 100%; 
+        height: auto; 
+    }
+
+    .post-grid {
+        grid-template-columns: repeat(2, 1fr); 
+        margin-left: 10px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .h1 {
+        font-size: 36px;
+    }
+
+    .carousel {
+        max-width: 80%;
+    }
+
+    .post-thumbnail {
+        width: 50%;
+        height: auto; 
+    }
+
+    .post-grid {
+        grid-template-columns: repeat(3, 1fr); 
+        margin-left: 100px;
+    }
+}
+
+
+

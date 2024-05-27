@@ -24,4 +24,31 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.removeItem('token');
         window.location.href = '../index.html';
     });
+
+let timeoutId;
+const TIMEOUT_DURATION = 30 * 60 * 1000; 
+
+function startLogoutTimer() {
+    clearTimeout(timeoutId); 
+    timeoutId = setTimeout(logout, TIMEOUT_DURATION);
+}
+
+function resetLogoutTimer() {
+    clearTimeout(timeoutId); 
+    startLogoutTimer(); 
+}
+
+function logout() {
+    localStorage.removeItem('token'); 
+    window.location.href = '/account/login.html'; 
+}
+
+document.addEventListener('mousemove', resetLogoutTimer);
+document.addEventListener('mousedown', resetLogoutTimer);
+document.addEventListener('keypress', resetLogoutTimer);
+document.addEventListener('scroll', resetLogoutTimer);
+
+startLogoutTimer();
+    
 });
+

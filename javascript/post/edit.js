@@ -134,14 +134,15 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('detailAuthor').innerText = `By ${author.name}`;
         document.getElementById('detailPublished').innerText = `Published on ${new Date(created).toLocaleDateString()}`;
         document.getElementById('detailUpdated').innerText = `Updated on ${new Date(updated).toLocaleDateString()}`;
-
+    
         const detailImage = document.getElementById('detailImage');
         detailImage.src = imageUrl || '';
         detailImage.style.display = imageUrl ? 'block' : 'none';
-
+    
         const paragraphs = content.split('\n').map(para => `<p>${para}</p>`).join('');
         document.getElementById('detailBody').innerHTML = paragraphs;
     }
+    
 
     function highlightSelectedPost(postId) {
         const postItems = document.querySelectorAll('.post-item');
@@ -195,18 +196,22 @@ document.addEventListener('DOMContentLoaded', () => {
             postDetail.style.display = 'none';
             postButton.innerText = "Update Post"; // Set the button text to "Update Post"
             
-            // Check if there's an existing post being edited
-            if (selectedPostId) {
-                // Add a delete button dynamically
-                const deleteButton = document.createElement('button');
-                deleteButton.innerText = 'Delete Post';
-                deleteButton.classList.add('delete-post-button');
-                deleteButton.addEventListener('click', () => confirmDeletePost()); // Call the delete function when clicked
-                postEdit.appendChild(deleteButton); // Append the delete button to the edit form
+            // Check if there's an existing delete button and remove it if it exists
+            const existingDeleteButton = document.querySelector('.delete-post-button');
+            if (existingDeleteButton) {
+                existingDeleteButton.remove();
             }
+    
+            // Add a delete button dynamically
+            const deleteButton = document.createElement('button');
+            deleteButton.innerText = 'Delete Post';
+            deleteButton.classList.add('delete-post-button');
+            deleteButton.addEventListener('click', () => confirmDeletePost()); // Call the delete function when clicked
+            postEdit.appendChild(deleteButton); // Append the delete button to the edit form
         })
         .catch(error => console.error('Error fetching post data:', error));
     }
+    
     
     function confirmDeletePost() {
         if (confirm("Are you sure you want to delete this post?")) {

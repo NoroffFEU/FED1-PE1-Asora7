@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function() {
     const token = localStorage.getItem('token');
     const editNavItem = document.querySelector('.edit');
@@ -36,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        handleLogin(event);
+        handleLogin(email, password);
     });
 
     logoutButton.addEventListener('click', function(event) {
@@ -45,4 +44,45 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.removeItem('token');
         window.location.href = '../../index.html';
     });
+
+    function handleLogin(email, password) {
+        const loginData = {
+            email: email,
+            password: password
+        };
+
+        fetch('https://v2.api.noroff.dev/auth/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(loginData)
+        })
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error('Login failed');
+            }
+        })
+        .then(data => {
+            console.log('Login response data:', data);
+
+            if (data.data && data.data.accessToken) {
+                localStorage.setItem('token', data.data.accessToken);
+                window.location.href = '../../post/edit.html';
+
+                const successMessage = document.querySelector('.success-message');
+                successMessage.textContent = 'Login successful!';
+                successMessage.style.display = 'block';
+            } else {
+                console.error('Token not found in response');
+                errorMessage.textContent = 'Login failed. Token not received.';
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            errorMessage.textContent = 'Login failed. Please check your credentials.';
+        });
+    }
 });
