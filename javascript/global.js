@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function() {
     const token = localStorage.getItem('token');
     const editNavItem = document.querySelector('.edit');
@@ -18,37 +17,40 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('User is not logged in.');
     }
 
-    logoutButton.addEventListener('click', function(event) {
-        event.preventDefault();
+    if (logoutButton) {
+        logoutButton.addEventListener('click', function(event) {
+            event.preventDefault();
 
+            localStorage.removeItem('token');
+            window.location.href = '/index.html';
+        });
+    }
+
+    let timeoutId;
+    const TIMEOUT_DURATION = 30 * 60 * 1000; 
+
+    function startLogoutTimer() {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(logout, TIMEOUT_DURATION);
+    }
+
+    function resetLogoutTimer() {
+        clearTimeout(timeoutId);
+        startLogoutTimer();
+    }
+
+    function logout() {
         localStorage.removeItem('token');
-        window.location.href = '/index.html';
-    });
+        window.location.href = '/account/login.html';
+    }
 
-let timeoutId;
-const TIMEOUT_DURATION = 30 * 60 * 1000; 
+    document.addEventListener('mousemove', resetLogoutTimer);
+    document.addEventListener('mousedown', resetLogoutTimer);
+    document.addEventListener('keypress', resetLogoutTimer);
+    document.addEventListener('scroll', resetLogoutTimer);
 
-function startLogoutTimer() {
-    clearTimeout(timeoutId); 
-    timeoutId = setTimeout(logout, TIMEOUT_DURATION);
-}
-
-function resetLogoutTimer() {
-    clearTimeout(timeoutId); 
-    startLogoutTimer(); 
-}
-
-function logout() {
-    localStorage.removeItem('token'); 
-    window.location.href = '/account/login.html'; 
-}
-
-document.addEventListener('mousemove', resetLogoutTimer);
-document.addEventListener('mousedown', resetLogoutTimer);
-document.addEventListener('keypress', resetLogoutTimer);
-document.addEventListener('scroll', resetLogoutTimer);
-
-startLogoutTimer();
-    
+    if (token) {
+        startLogoutTimer();
+    }
 });
 

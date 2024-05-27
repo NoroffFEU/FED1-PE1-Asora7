@@ -22,28 +22,32 @@ document.addEventListener('DOMContentLoaded', function() {
     const loginButton = document.querySelector('.login-button');
     const logoutButton = document.querySelector('.log-out');
 
-    loginButton.addEventListener('click', function(event) {
-        event.preventDefault();
+    if (loginButton) {
+        loginButton.addEventListener('click', function(event) {
+            event.preventDefault();
 
-        errorMessage.textContent = '';
+            errorMessage.textContent = '';
 
-        const email = emailInput.value.trim();
-        const password = passwordInput.value;
+            const email = emailInput.value.trim();
+            const password = passwordInput.value;
 
-        if (email === '' || password === '') {
-            errorMessage.textContent = 'Please enter your email and password.';
-            return;
-        }
+            if (email === '' || password === '') {
+                errorMessage.textContent = 'Please enter your email and password.';
+                return;
+            }
 
-        handleLogin(email, password);
-    });
+            handleLogin(email, password);
+        });
+    }
 
-    logoutButton.addEventListener('click', function(event) {
-        event.preventDefault();
+    if (logoutButton) {
+        logoutButton.addEventListener('click', function(event) {
+            event.preventDefault();
 
-        localStorage.removeItem('token');
-        window.location.href = '/index.html';
-    });
+            localStorage.removeItem('token');
+            window.location.href = '/index.html';
+        });
+    }
 
     function handleLogin(email, password) {
         const loginData = {
@@ -70,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (data.data && data.data.accessToken) {
                 localStorage.setItem('token', data.data.accessToken);
-                window.location.href = 'post/edit.html';
+                window.location.href = '/post/edit.html'; 
 
                 const successMessage = document.querySelector('.success-message');
                 successMessage.textContent = 'Login successful!';
@@ -86,3 +90,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
