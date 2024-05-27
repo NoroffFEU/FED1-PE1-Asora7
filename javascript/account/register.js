@@ -5,32 +5,37 @@ document.addEventListener('DOMContentLoaded', function() {
     const errorMessage = document.querySelector('.error-message');
     const registerButton = document.querySelector('button');
 
-    registerButton.addEventListener('click', function(event) {
-        event.preventDefault();
+    // registerButton.addEventListener('click', function(event) {
+    //     event.preventDefault();
         
-        errorMessage.textContent = '';
+    //     errorMessage.textContent = '';
 
-        const name = nameInput.value.trim();
-        const email = emailInput.value.trim();
-        const password = passwordInput.value;
+    //     const name = nameInput.value.trim();
+    //     const email = emailInput.value.trim();
+    //     const password = passwordInput.value;
 
-        if (name === '' || email === '' || password === '') {
-            errorMessage.textContent = 'Please fill out all fields.';
-            return;
-        }
+    //     if (name === '' || email === '' || password === '') {
+    //         errorMessage.textContent = 'Please fill out all fields.';
+    //         return;
+    //     }
 
-        if (password.length < 8) {
-            errorMessage.textContent = 'Password must be at least 8 characters long.';
-            return;
-        }
+    //     if (password.length < 8) {
+    //         errorMessage.textContent = 'Password must be at least 8 characters long.';
+    //         return;
+    //     }
 
-        const registrationData = {
-            name: name,
-            email: email,
-            password: password
-        };
+    //     const registrationData = {
+    //         name: name,
+    //         email: email,
+    //         password: password
+    //     };
 
-        fetchRegistration(registrationData);
+    //     fetchRegistration(registrationData);
+    // });
+
+    registerButton.addEventListener('click', function(event) {
+        console.log('Registration successful:', data);
+        window.location.href = '../../account/login.html'; 
     });
 
     function fetchRegistration(registrationData) {
