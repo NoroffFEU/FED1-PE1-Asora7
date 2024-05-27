@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Updated: Add post ID to URL for shareable link
         readMoreButton.addEventListener('click', () => {
-            window.location.href = `../post/index.html?id=${post.id}`;
+            window.location.href = `../index.html?id=${post.id}`;
         });
 
         postContainer.appendChild(readMoreButton);
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Updated: Add post ID to URL for shareable link
             postThumbnail.addEventListener('click', () => {
-                window.location.href = `../post/index.html?id=${post.id}`;
+                window.location.href = `../index.html?id=${post.id}`;
             });
 
             postGrid.appendChild(postThumbnail);
