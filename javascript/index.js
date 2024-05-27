@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(result => {
             posts = result.data;
             posts.sort((a, b) => new Date(b.created) - new Date(a.created));
-            carouselPosts = posts.slice(0, 3); // Get the latest 3 posts for the carousel
+            carouselPosts = posts.slice(0, 3); 
             displayPosts(); 
             displayThumbnailPosts(); 
         })
@@ -58,9 +58,8 @@ document.addEventListener('DOMContentLoaded', () => {
         readMoreButton.textContent = 'Read more..';
         readMoreButton.classList.add('read-more');
         
-        // Updated: Add post ID to URL for shareable link
         readMoreButton.addEventListener('click', () => {
-            window.location.href = `../index.html?id=${post.id}`;
+            window.location.href = `../../FED1-PE1-Asora7/index.html?id=${post.id}`;
         });
 
         postContainer.appendChild(readMoreButton);
@@ -86,9 +85,8 @@ document.addEventListener('DOMContentLoaded', () => {
             thumbnailImage.alt = post.title;
             postThumbnail.appendChild(thumbnailImage);
 
-            // Updated: Add post ID to URL for shareable link
             postThumbnail.addEventListener('click', () => {
-                window.location.href = `../index.html?id=${post.id}`;
+                window.location.href = `../../FED1-PE1-Asora7/index.html?id=${post.id}`;
             });
 
             postGrid.appendChild(postThumbnail);
