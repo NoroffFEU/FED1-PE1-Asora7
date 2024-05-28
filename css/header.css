@@ -9,14 +9,9 @@
 }
 
 header {
-    position: fixed; /* Fixed positioning */
-    top: 0; /* Position at the top of the viewport */
-    width: 100%; /* Take up the full width of the viewport */
     display: flex;
     align-items: center;
     border-bottom: 1px solid #532F27;
-    background-color: white; /* Optionally, add a background color */
-    z-index: 1000; /* Ensure the header stays above other content */
 }
 
 .logo {
