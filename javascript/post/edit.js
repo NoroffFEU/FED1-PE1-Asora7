@@ -69,28 +69,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function createOrUpdatePost(event) {
         event.preventDefault();
-
+    
         const title = document.getElementById('postTitle').value;
         const body = document.getElementById('postBody').value;
         const mediaUrl = document.getElementById('postImage').value;
-
+    
         if (!title) {
             showMessage("Title is required.", "error");
-            return;
+            return; // Prevent further execution of the function
         }
         if (mediaUrl && !isValidUrl(mediaUrl)) {
             showMessage("Invalid URL format for media.", "error");
             return;
         }
-
+    
         const postData = {
             title: title,
             body: body,
             media: mediaUrl ? { url: mediaUrl } : undefined
         };
-
+    
         const request = selectedPostId ? updatePost(selectedPostId, postData) : createPost(postData);
-
+    
         request.then(response => {
             if (response.ok) {
                 fetchBlogPosts();
@@ -111,6 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
             showMessage("Error creating/updating post. Please try again.", "error");
         });
     }
+    
 
     function viewPostDetail(postId) {
         fetch(`${apiUrl}/blog/posts/Asora/${postId}`, {
