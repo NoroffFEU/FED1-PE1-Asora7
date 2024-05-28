@@ -58,3 +58,13 @@ button {
     padding-bottom: 5px;
     font-family: 'Inter Semi';
 }
+
+.error-message {
+    margin-top: 2rem;
+    color: red;
+}
+
+.success-message {
+    margin-top: 2rem;
+    color: green;
+}
