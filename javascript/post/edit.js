@@ -154,28 +154,10 @@ function createOrUpdatePost(event) {
     }
 
     function showMessage(message, type) {
+        const messageDiv = document.getElementById('message');
         messageDiv.innerText = message;
         messageDiv.className = type;
         messageDiv.style.display = 'block';
-    
-        // Show custom messages for different actions
-        switch(type) {
-            case "success":
-                if (message.includes("updated")) {
-                    messageDiv.innerText = "Post updated successfully.";
-                } else if (message.includes("created")) {
-                    messageDiv.innerText = "Post created successfully.";
-                } else if (message.includes("deleted")) {
-                    messageDiv.innerText = "Post deleted successfully.";
-                }
-                break;
-            case "error":
-                // Keep the original error message
-                break;
-            default:
-                // Handle other message types if needed
-                break;
-        }
     
         setTimeout(() => {
             messageDiv.style.display = 'none';
