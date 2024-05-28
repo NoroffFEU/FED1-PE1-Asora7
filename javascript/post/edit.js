@@ -97,8 +97,7 @@ function createOrUpdatePost(event) {
             postForm.reset();
             postEdit.style.display = 'none';
             postDetail.style.display = 'none';
-            showMessage("Post updated successfully.", "success");
-            showMessage("Post created successfully.", "success");
+            showMessage(selectedPostId ? "Post updated successfully." : "Post created successfully.", "success");
             selectedPostId = null;
             postButton.innerText = "Create Post"; 
         } else {
@@ -267,7 +266,6 @@ function createOrUpdatePost(event) {
             showMessage("Error deleting post. Please try again.", "error");
         });
     }
-    
     
 
     fetchBlogPosts();

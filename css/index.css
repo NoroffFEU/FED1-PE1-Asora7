@@ -186,7 +186,7 @@ button {
 
     .post-grid {
         grid-template-columns: repeat(2, 1fr); 
-        margin-left: 10px;
+        margin: auto;
     }
 }
 
@@ -206,7 +206,7 @@ button {
 
     .post-grid {
         grid-template-columns: repeat(3, 1fr); 
-        margin-left: 100px;
+        margin: auto;
     }
 }
 
