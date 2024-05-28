@@ -227,11 +227,6 @@
         align-items: center; 
     }
 
-    .post-container {
-        max-width: 90%; /* Make post container full width */
-        margin: auto; /* Center horizontally */
-    }
-    
     .post-container img {
         margin-bottom: 20px; 
     }
@@ -246,24 +241,11 @@
 
     #blogPosts {
         width: 100%; 
-        margin-top: 20px;
-    }
-
-    #newPostButton {
-        margin-left: 0; /* Remove left margin */
-        margin-top: 0; /* Remove top margin */
     }
 
     #postEdit,
     #postDetail {
-        width: 90%; /* Make edit and detail sections full width */
-        margin: auto; /* Center horizontally */
-        margin-top: 20px
-    }
-
-    #editPostContainer {
-        position: relative; /* Remove absolute positioning */
-        margin-top: 20px; /* Add some top margin */
+        width: 100%; 
     }
 
     #editPostButton {
