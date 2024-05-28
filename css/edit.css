@@ -239,18 +239,31 @@
         max-width: 90%; 
     }
 
+    #newPostButton {
+        margin-left: 0;
+        margin-top: 0; 
+    }
+
     #blogPosts {
         width: 100%; 
+        margin-top: 20px;
     }
 
     #postEdit,
     #postDetail {
-        width: 100%; 
+        width: 90%; 
+        margin: auto; 
+        margin-top: 20px;
     }
 
     #editPostButton {
         top: unset;
         bottom: 20px; 
         right: 20px; 
+    }
+
+    #editPostContainer {
+        position: relative; 
+        margin-top: 20px; 
     }
 }
