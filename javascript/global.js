@@ -9,12 +9,10 @@ document.addEventListener('DOMContentLoaded', function() {
         editNavItem.classList.remove('hide');
         logInNavItem.classList.add('hide');
         logOutNavItem.classList.remove('hide');
-        console.log('User is logged in.');
     } else {
         editNavItem.classList.add('hide');
         logInNavItem.classList.remove('hide');
         logOutNavItem.classList.add('hide');
-        console.log('User is not logged in.');
     }
 
     if (logoutButton) {

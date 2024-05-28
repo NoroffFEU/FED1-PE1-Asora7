@@ -102,12 +102,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 postButton.innerText = "Create Post"; 
             } else {
                 response.json().then(error => {
-                    console.error('Error creating/updating post:', error);
                     showMessage(`Error creating/updating post: ${error.errors[0].message}`, "error");
                 });
             }
         }).catch(error => {
-            console.error('Error creating/updating post:', error);
             showMessage("Error creating/updating post. Please try again.", "error");
         });
     }
@@ -245,7 +243,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         })
         .catch(error => {
-            console.error('Error deleting post:', error);
             showMessage("Error deleting post. Please try again.", "error");
         });
     }

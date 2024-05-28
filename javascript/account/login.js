@@ -8,12 +8,10 @@ document.addEventListener('DOMContentLoaded', function() {
         editNavItem.classList.remove('hide');
         logInNavItem.classList.add('hide');
         logOutNavItem.classList.remove('hide');
-        console.log('User is logged in.');
     } else {
         editNavItem.classList.add('hide');
         logInNavItem.classList.remove('hide');
         logOutNavItem.classList.add('hide');
-        console.log('User is not logged in.');
     }
 
     const emailInput = document.getElementById('email');
@@ -70,7 +68,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         })
         .then(data => {
-            console.log('Login response data:', data);
 
             if (data.data && data.data.accessToken) {
                 localStorage.setItem('token', data.data.accessToken);
@@ -85,8 +82,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         })
         .catch(error => {
-            console.error('Error:', error);
             errorMessage.textContent = 'Login failed. Please check your credentials.';
+
+            const successMessage = document.querySelector('.success-message');
+            successMessage.textContent = '';
         });
     }
 });
