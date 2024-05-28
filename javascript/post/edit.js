@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
         if (!title) {
             showMessage("Title is required.", "error");
-            return; // Prevent further execution of the function
+            return; 
         }
         if (mediaUrl && !isValidUrl(mediaUrl)) {
             showMessage("Invalid URL format for media.", "error");
