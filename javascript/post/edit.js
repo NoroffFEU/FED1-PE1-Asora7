@@ -67,49 +67,49 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function createOrUpdatePost(event) {
-        event.preventDefault();
-    
-        const title = document.getElementById('postTitle').value;
-        const body = document.getElementById('postBody').value;
-        const mediaUrl = document.getElementById('postImage').value;
-    
-        if (!title) {
-            showMessage("Title is required.", "error");
-            return; 
-        }
-        if (mediaUrl && !isValidUrl(mediaUrl)) {
-            showMessage("Invalid URL format for media.", "error");
-            return;
-        }
-    
-        const postData = {
-            title: title,
-            body: body,
-            media: mediaUrl ? { url: mediaUrl } : undefined
-        };
-    
-        const request = selectedPostId ? updatePost(selectedPostId, postData) : createPost(postData);
-    
-        request.then(response => {
-            if (response.ok) {
-                fetchBlogPosts();
-                postForm.reset();
-                postEdit.style.display = 'none';
-                postDetail.style.display = 'none';
-                showMessage(selectedPostId ? "Post updated successfully." : "Post created successfully.", "success");
-                selectedPostId = null;
-                postButton.innerText = "Create Post"; 
-            } else {
-                response.json().then(error => {
-                    showMessage(`Error creating/updating post: ${error.errors[0].message}`, "error");
-                });
-            }
-        }).catch(error => {
-            showMessage("Error creating/updating post. Please try again.", "error");
-        });
+function createOrUpdatePost(event) {
+    event.preventDefault();
+
+    const title = document.getElementById('postTitle').value;
+    const body = document.getElementById('postBody').value;
+    const mediaUrl = document.getElementById('postImage').value;
+
+    if (!title) {
+        showMessage("Title is required.", "error");
+        return; 
     }
-    
+    if (mediaUrl && !isValidUrl(mediaUrl)) {
+        showMessage("Invalid URL format for media.", "error");
+        return;
+    }
+
+    const postData = {
+        title: title,
+        body: body,
+        media: mediaUrl ? { url: mediaUrl } : undefined
+    };
+
+    const request = selectedPostId ? updatePost(selectedPostId, postData) : createPost(postData);
+
+    request.then(response => {
+        if (response.ok) {
+            fetchBlogPosts();
+            postForm.reset();
+            postEdit.style.display = 'none';
+            postDetail.style.display = 'none';
+            showMessage("Post updated successfully.", "success");
+            showMessage("Post created successfully.", "success");
+            selectedPostId = null;
+            postButton.innerText = "Create Post"; 
+        } else {
+            response.json().then(error => {
+                showMessage(`Error creating/updating post: ${error.errors[0].message}`, "error");
+            });
+        }
+    }).catch(error => {
+        showMessage("Error creating/updating post. Please try again.", "error");
+    });
+}
 
 
     function viewPostDetail(postId) {
@@ -158,10 +158,31 @@ document.addEventListener('DOMContentLoaded', () => {
         messageDiv.innerText = message;
         messageDiv.className = type;
         messageDiv.style.display = 'block';
+    
+        // Show custom messages for different actions
+        switch(type) {
+            case "success":
+                if (message.includes("updated")) {
+                    messageDiv.innerText = "Post updated successfully.";
+                } else if (message.includes("created")) {
+                    messageDiv.innerText = "Post created successfully.";
+                } else if (message.includes("deleted")) {
+                    messageDiv.innerText = "Post deleted successfully.";
+                }
+                break;
+            case "error":
+                // Keep the original error message
+                break;
+            default:
+                // Handle other message types if needed
+                break;
+        }
+    
         setTimeout(() => {
             messageDiv.style.display = 'none';
         }, 3000);
     }
+    
 
     function isValidUrl(url) {
         try {
@@ -246,6 +267,7 @@ document.addEventListener('DOMContentLoaded', () => {
             showMessage("Error deleting post. Please try again.", "error");
         });
     }
+    
     
 
     fetchBlogPosts();
