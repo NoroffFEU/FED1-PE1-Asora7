@@ -26,14 +26,14 @@
     margin-top: 20px; 
     margin-bottom: 20px;
     margin-left: 25%;
-    background-color: #398E11;
+    background-color: #2e7d32;
     color: white;
     font-family: 'Inter Regular';
     font-size: 13px;
 }
 
 #newPostButton:hover {
-    background-color: #2e7d32;
+    background-color: #1e5321;
 }
 
 .container {
@@ -149,7 +149,7 @@
 }
 
 #postButton {
-    background-color: #4CAF50;
+    background-color: #2e7d32;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -159,7 +159,7 @@
 }
 
 #postButton:hover {
-    background-color: #2e7d32;
+    background-color: #1e5321;
 }
 
 #deletePostButton, .delete-post-button {
