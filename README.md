@@ -8,10 +8,7 @@ Dough Dreams is a responsive blogging application designed to manage and showcas
 
 ## Description
 
-This front-end user interface interacts with an existing API to allow users to view dynamic blog posts and for the blog owner to manage their content easily. 
-The application includes public pages for viewing blog content and admin pages for user registration, login, and post management. Admin login is made, and editing the posts is only avalible when logged in.
-
-Dough Dreams is a responsive blogging application designed to manage and showcase pastry and cake recipes. This front-end user interface interacts with an existing API to allow users to view dynamic blog posts and for the blog owner to manage their content easily. The application includes public pages for viewing blog content and admin pages for user registration, login, and post management.
+Dough Dreams is a responsive blogging application designed to manage and showcase pastry and cake recipes. This front-end user interface interacts with an existing API to allow users to view dynamic blog posts and for the blog owner to manage their content easily. The application includes public pages for viewing blog content and admin pages for user registration, login, and post management. Admin login is made, and editing the posts is only avalible when logged in.
 
 # Key features:
 
