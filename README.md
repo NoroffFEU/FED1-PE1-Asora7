@@ -158,6 +158,12 @@ Contributions are welcome! If you'd like to contribute to this project, please f
 Email: veronica_asora@hotmail.com
 
 
+## Acknowledgments
+
+- Special thanks to Noroff for providing the project brief and provided API.
+- Images by unsplash.com
+
+
 
 
 
