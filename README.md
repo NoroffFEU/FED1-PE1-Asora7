@@ -18,6 +18,7 @@ Dough Dreams is a responsive blogging application designed to manage and showcas
 - blog post edit pages for the owner. 
 - account login page
 - registration pages
+- admin login
 
 
 # Client
