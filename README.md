@@ -1,7 +1,7 @@
 
 # FED1 Project Exam 1
 
-![Dough Dreams Logo](https://raw.githubusercontent.com/Asora7/rainydays/main/Images/favicon.png)
+![Dough Dreams Logo](https://raw.githubusercontent.com/NoroffFEU/FED1-PE1-Asora7/main/favicon/android-chrome-512x512.png)
 
 
 Dough Dreams is a responsive blogging application designed to manage and showcase pastry and cake recipes.
