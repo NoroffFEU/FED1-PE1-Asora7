@@ -71,11 +71,11 @@ As the owner, I want a validated register form that allows me to create a new ac
 
 # Sitemap
 
-/index.html (Blog Feed Page)
-/post/index.html (Blog Post Public Page)
-/post/edit.html (Blog Post Edit Page)
-/account/login.html (Account Login Page)
-/account/register.html (Account Register Page)
+- /index.html (Blog Feed Page)
+- /post/index.html (Blog Post Public Page)
+- /post/edit.html (Blog Post Edit Page)
+- /account/login.html (Account Login Page)
+- /account/register.html (Account Register Page)
 
 
 API Documentation: https://docs.noroff.dev/docs/v2/blog/posts
