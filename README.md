@@ -1,8 +1,7 @@
 
-# FED1 Project Exam 1 Dough Dreams
+# Dough Dreams
 
 ![Dough Dreams Logo](https://raw.githubusercontent.com/NoroffFEU/FED1-PE1-Asora7/main/favicon/android-chrome-512x512.png)
-
 
 Dough Dreams is a responsive blogging application designed to manage and showcase pastry and cake recipes.
 
@@ -89,26 +88,70 @@ Images by unsplash.com
 - HTML
 - CSS
 - Javascript
+- VS code
 
 
 ## Getting Started
 
 ### Installing
 
+
 1. Clone the repo:
 
 ```bash
-https://github.com/NoroffFEU/FED1-PE1-Asora7.git
+git clone https://github.com/NoroffFEU/FED1-PE1-Asora7.git
 ```
 
-You could also view it in the deoplyed link  https://norofffeu.github.io/FED1-PE1-Asora7/
+2. Navigate to the Project Directory:
+   
+```bash
+cd FED1-PE1-Asora7
+```
+
+
+3. Viewing the Project:
+
+```bash
+open index.html
+```
+
+- View github repository: https://github.com/NoroffFEU/FED1-PE1-Asora7.git
+- View deployed link: https://norofffeu.github.io/FED1-PE1-Asora7/
+
+
+4. Locate the FED1-PE1-Asora7 folder locally on your computer:
+
+After cloning, the FED1-PE1-Asora7 folder should be located in your current directory. If you need to locate it:
+
+- On macOS/Linux: You can navigate to the folder where you cloned the project using your file explorer or terminal. Typically, it will be in your home directory or the directory from where you ran the git clone command.
+  
+- On Windows: Similarly, use File Explorer to navigate to the folder where you cloned the project. This is typically in your user directory or the directory you specified when cloning.
+  
+- Once you locate the FED1-PE1-Asora7 folder, you can open it to access all project files, including index.html.
+
+
+5. Open in VS code:
+
+To open the project in Visual Studio Code (VS Code), follow these steps:
+
+- Launch Visual Studio Code on your computer.
+- In VS Code, go to File > Open Folder....
+- Navigate to the location where you cloned the FED1-PE1-Asora7 repository.
+- Select the FED1-PE1-Asora7 folder and click Open.
+- Once the project is open in VS Code, you can navigate through the files in the Explorer sidebar and edit them as needed.
+   
+
+### Running
+
+Since this project does not require Node.js or npm, you do not need to run any additional commands to view or edit the project files.
 
 
 ## Contributing
+
 Contributions are welcome! If you'd like to contribute to this project, please fork the repository and submit a pull request.
 
-## Contact
 
+## Contact
 
 [My Instagram](www.instagram.com/veronicaasora)
 
