@@ -1,7 +1,7 @@
 
 # FED1 Project Exam 1
 
-![Skjermbilde 2024-06-06 kl  12 58 00](https://github.com/NoroffFEU/FED1-PE1-Asora7/raw/main/assets/142609146/efe91a80-b0f4-4221-9990-9e5eee8fec96.png)
+![Dough Dreams Logo](https://raw.githubusercontent.com/Asora7/rainydays/main/Images/favicon.png)
 
 
 Dough Dreams is a responsive blogging application designed to manage and showcase pastry and cake recipes.
