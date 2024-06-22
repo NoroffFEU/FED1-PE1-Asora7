@@ -1,5 +1,5 @@
 
-# FED1 Project Exam 1
+# FED1 Project Exam 1 Dough Dreams
 
 ![Dough Dreams Logo](https://raw.githubusercontent.com/NoroffFEU/FED1-PE1-Asora7/main/favicon/android-chrome-512x512.png)
 
