@@ -93,6 +93,8 @@ Images by unsplash.com
 
 ## Getting Started
 
+Make sure git is installed.
+
 ### Installing
 
 
